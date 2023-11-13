@@ -37,35 +37,33 @@
     <link rel="stylesheet" href="css/owl.transitions.css" >
 
     <script type="text/javascript"> 
-        function sendEmail() { 
-          let name =   document.getElementById("name").value;
-          let email =   document.getElementById("email").value;
-          let subject =   document.getElementById("subject").value;
-          let message =   document.getElementById("message").value;
+        function sendMessage() {
          
-         if(name=="")
-         {  alert("Enter Name") }
-         else if(email=="")
-         {  alert("Enter Email") }
-         else if(subject == "")
-         { alert("Enter Subject") }
-         else if (message == "")
-         {  alert("Enter Message")}
+         let name =   document.getElementById("name").value;
+         let email =   document.getElementById("email").value;
+         let message =   document.getElementById("message").value;
+        
+        if(name=="")
+        {  alert("Enter Name") 
+           return;
+        }else if(email=="")
+        {  alert("Enter Email") ;
+           return; }
+        else if (message == "")
+        {  alert("Enter Message");
+           return;
+       }
 
-          Email.send({ 
-            Host: "smtp.mail.yahoo.com", 
-            port:587,
-            Username: "vinthiyamelvin@yahoo.com", 
-            Password: "uhgpqchzvvhuwmgb", 
-            To: email, 
-            From: "vinthiyamelvin@yahoo.com", 
-            Subject: subject, 
-            Body: message, 
-          }) 
-            .then(function (message) { 
-              alert("mail sent successfully") 
-            }); 
-        } 
+       var  phone_no = "+919940667547"
+       var url = "https://wa.me/919940667547?text="   
+        + "Name:" +name + "%0a"
+        + "Email:" +email + "%0a"
+        + "Message:" +message + "%0a"
+        
+        window.open(url, '_blank').focus();
+
+        
+       } 
       </script> 
 </head>
 
@@ -183,30 +181,30 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text"  required   class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text"  required   class="form-control" id="name" placeholder="Your Name" value="">
                                         <label for="name" >Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email"   required class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email"   required class="form-control" id="email" placeholder="Your Email" value="">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
-                                <div class="col-12">
+                              <!--   <div class="col-12">
                                     <div class="form-floating">
                                         <input type="text"   required  class="form-control" id="subject" placeholder="Subject">
                                         <label for="subject">Subject</label>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea  required   class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Message</label>
+                                        <textarea  required  maxlength="250"  class="form-control" placeholder="Leave a message here" value="" id="message" style="height: 100px"></textarea>
+                                        <label for="message">Message</label><small> only 250 characters</small>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button  onclick="sendEmail()" class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
+                                    <button  onclick="sendMessage()" class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
                                 </div>
                             </div>
                         </form>
