@@ -37,51 +37,49 @@
     <link rel="stylesheet" href="css/owl.transitions.css" >
 
     <script type="text/javascript"> 
-        function sendEmail() { 
+        function sendMessage() {
+         
           let name =   document.getElementById("name").value;
           let email =   document.getElementById("email").value;
-          let subject =   document.getElementById("subject").value;
           let message =   document.getElementById("message").value;
          
          if(name=="")
-         {  alert("Enter Name") }
-         else if(email=="")
-         {  alert("Enter Email") }
-         else if(subject == "")
-         { alert("Enter Subject") }
+         {  alert("Enter Name") 
+            return;
+         }else if(email=="")
+         {  alert("Enter Email") ;
+            return; }
          else if (message == "")
-         {  alert("Enter Message")}
+         {  alert("Enter Message");
+            return;
+        }
 
-          Email.send({ 
-            Host: "smtp.mail.yahoo.com", 
-            port:587,
-            Username: "vinthiyamelvin@yahoo.com", 
-            Password: "uhgpqchzvvhuwmgb", 
-            To: email, 
-            From: "vinthiyamelvin@yahoo.com", 
-            Subject: subject, 
-            Body: message, 
-          }) 
-            .then(function (message) { 
-              alert("mail sent successfully") 
-            }); 
+        var  phone_no = "+919940667547"
+        var url = "https://wa.me/919940667547?text="   
+         + "Name:" +name + "%0a"
+         + "Email:" +email + "%0a"
+         + "Message:" +message + "%0a"
+         
+         window.open(url, '_blank').focus();
+
+         
         } 
-      </script> 
+      </script>      
 </head>
 
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+            <span class="sr-only">Loading...</span>   
         </div>
     </div>
     <!-- Spinner End -->
 
 
     <!-- Topbar Start -->
-    <div class="container-fluid bg-dark p-0">
-        <div class="row gx-0 d-none d-lg-flex">
+    <div class="container-fluid bg-dark ">
+        <div class="row gx-0 d-none d-lg-flex p-2 mx-auto">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center me-4">.
                  
@@ -94,15 +92,15 @@
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
-               <!--  <div class="h-100 d-inline-flex align-items-center me-4">
+                <div class="h-100 d-inline-flex align-items-center me-4 ">
                     <small class="fa fa-phone-alt text-primary me-2 "></small>
-                    <small>+91 80153 80890</small>
-                </div> -->
-                <div class="h-100 d-inline-flex align-items-center mx-n2">
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-facebook-f"></i></a>
-                   <!--  <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-twitter"></i></a> -->
+                    <small class=" ">+91 12345 69872</small>
+                </div> 
+                <div class="h-100 d-inline-flex align-items-center  mx-2 ">
+                   <a class="btn btn-square btn-link rounded-0 border-0  border-secondary" href=""><i class="fab fa-facebook-f"></i></a>
+                      <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-twitter"></i></a> 
                     <a class="btn btn-square btn-link rounded-0 border-0  border-secondary" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <!-- <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a> -->
+                  <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a> 
                 
                 </div>
             </div>
@@ -112,10 +110,10 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-3">
+        <a href="index.html" class="navbar-brand d-flex align-items-center  px-4 px-lg-5">
            <!--  <h2 class="m-0 text-primary">V2H Engineering</h2> -->
-           <img src="img/V2H/header/V2HBird Logo - Copy.png" width="120" height="60"/>
+           <img src="img/V2H/header/V2HBird Logo - Copy.png" id="logoimage" width="100" height="50"/>
               <h2 class="m-0 text-dark">V2H Engineering</h2> 
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -148,10 +146,22 @@
         </div>
     </nav>
     <!-- Navbar End -->
+    <div class="container-xxl py-5 justify-content-center "> 
+        <div class="container">  
+        <div   >
+        <video autoplay muted loop id="video"  width="100%">  
+          <source src="img/V2H/V2H Engineering1.mp4"  width="100%" type="video/mp4" />  
+        </video>
+      </div>
+        </div>
+        </div>
+
+   
+
 
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 pb-6 mt-2 wow fadeIn" data-wow-delay="0.1s">
+   <!--  <div class="container-fluid p-0 pb-6 mt-2 wow fadeIn" data-wow-delay="0.1s">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative" data-dot="<img src='img/V2H/products/carousel21.jpg'>">
                 <img id="carousel-img" class="img-fluid " src="img/V2H/products/carousel21.jpg" alt="">
@@ -159,8 +169,10 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-10 col-lg-8">
-                                <h5 class="display-2 text-white animated slideInDown">Engineered with Precision: Quality You Can Rely On.</h5>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-3"></p>
+                                 <h6 class="display-1 carotext animated slideInDown">Engineered with Precision: Quality You Can Rely On.</h6> 
+                                <p class="fs-5 fw-medium text-white mb-4 pb-3">
+                                  
+                                </p>
                               
                             </div>
                         </div>
@@ -173,13 +185,16 @@
                     <div class="container">
                         <div class="row justify-content-start"> 
                             <div class="col-10 col-lg-8">
-                                <h5 class="display-1 text-white animated slideInDown">
-                                     Pioneers: Setting the Standard for Quality.
-                                </h5>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-3"></p>
-                           
+                                <h6 class="display-1 carotext animated slideInDown">
+                                    
+                                </h6>
+                             
                             </div>
+                        
                         </div>
+                        <p class="fs-5 fw-medium text-white mb-4 pb-3 carotext">
+                            Pioneers: Setting the Standard for Quality.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -189,7 +204,7 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-10 col-lg-8">
-                                <h5 class="display-2 text-white animated slideInDown">
+                                <h5 class="display-2 carotext animated slideInDown">
                                     Crafting the Future with Accuracy
                                 </h5>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-3"></p>
@@ -205,7 +220,7 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-10 col-lg-8">
-                                <h5 class="display-2 text-white animated slideInDown">
+                                <h5 class="display-2 carotext animated slideInDown">
                                     Shaping the Future of Precision Engineering.
                                 </h5>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-3"></p>
@@ -221,7 +236,7 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-10 col-lg-8">
-                                <h5 class="display-2 text-white animated slideInDown">
+                                <h5 class="display-2 carotext animated slideInDown">
                                     Crafting Precision, Delivering Excellence: Your Industry Leader.
                                 </h5>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-3"></p>
@@ -232,7 +247,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Carousel End -->
 
 
@@ -289,7 +304,7 @@
         <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
             <div class="testimonial-item text-center">
                 <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-1" src="img/V2H/hero/HEPFLogo.jpg">
+                    <img class="img-fluid  mx-auto mb-1" src="img/V2H/hero/HEPF1.jpg">
                     
                 </div>
                 <div class="testimonial-text text-center rounded ">
@@ -301,7 +316,7 @@
             </div>
             <div class="testimonial-item text-center">
                 <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-1" src="img/V2H/hero/nlclogo.png">
+                    <img class="img-fluid  mx-auto mb-1" src="img/V2H/hero/nlclogo.png">
                  
                 </div>
                 <div class="testimonial-text text-center rounded">
@@ -310,7 +325,7 @@
             </div>
             <div class="testimonial-item text-center">
                 <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-1" src="img/V2H/hero/MKtronlogo.png">
+                    <img class="img-fluid  mx-auto mb-1" src="img/V2H/hero/MKtronlogo.png">
                  
                 </div>
                 <div class="testimonial-text text-center rounded ">
@@ -320,11 +335,31 @@
             </div>
             <div class="testimonial-item text-center">
                 <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-1" src="img/V2H/hero/castwelllogo.png">
+                    <img class="img-fluid mx-auto mb-1" src="img/V2H/hero/castwelllogo.png">
                   
                 </div>
                 <div class="testimonial-text text-center rounded ">
                     <h3 class="mb-1">Castwel Autoparts Private Limited</h3>
+                   
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <div class="testimonial-img position-relative">
+                    <img class="img-fluid mx-auto mb-1" src="img/V2H/hero/nashlogo.png">
+                  
+                </div>
+                <div class="testimonial-text text-center rounded ">
+                    <h3 class="mb-1">Nash Industries</h3>
+                   
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <div class="testimonial-img position-relative">
+                    <img class="img-fluid mx-auto mb-1" src="img/V2H/hero/badvelogo.png">
+                  
+                </div>
+                <div class="testimonial-text text-center rounded ">
+                    <h3 class="mb-1">Belrise Industries</h3>
                    
                 </div>
             </div>
@@ -338,7 +373,7 @@
 
   <!-- Projects Start -->
   <div class="container-xxl py-1">
-    <div class="container">
+    <div class="container ">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h1 class="text-primary">Our Products</h1>
          
@@ -354,130 +389,141 @@
                 </ul>
             </div>
         </div>
-        <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
-            <div class="col-lg-3 col-md-2 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img id="porf-img" class="img-fluid" src="img/V2H/products/shaft1.jpg" alt="">
+        <div class="row  g-4 portfolio-container wow fadeInUp    " data-wow-delay="0.5s">
+         
+            <div class="col-lg-3 col-md-6 portfolio-item first ">
+                <div class="mx-auto portfolio-img rounded overflow-hidden  ">
+                    <img id="porf-img" class="img-fluid " src="img/V2H/products/shaft1.jpg" alt="">
+                    <div class="position-relative p-0 pt-0">
+                        </div>
+                </div>  
+            </div>
+            <div class="col-lg-3 col-md-6 portfolio-item first">
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/bendrod3.jfif" alt="">
+                    <div class="position-relative p-0 pt-0">
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-2 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/bendrod3.jfif" alt="">
-               
+            <div class="col-lg-3 col-md-6 portfolio-item first">
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/shuttlerack1.jpg" alt="">
                 </div>
             </div>
-            <div class="col-lg-3 col-md-2 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/shuttlerack1.jpg" alt="">
+            <div class="col-lg-3 col-md-6 portfolio-item first">
+                <div class=" mx-auto portfolio-img rounded overflow-hidden">
+                    <div class="portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/shaft2.jpg" alt="">
                 </div>
             </div>
-            <div class="col-lg-3 col-md-2 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/shaft2.jpg" alt="">
-                </div>
-            </div>
+    
        
             <div class="col-lg-3 col-md-6 portfolio-item third">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/bendrod2.jfif" alt="">
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/bendrod2.jfif" alt="">
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/rodrect.jpg" alt="">
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/rodrect.jpg" alt="">
                
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/rect1.jpg" alt="">
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/rect1.jpg" alt="">
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/shuttlerack2.jpg" alt="">
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/shuttlerack2.jpg" alt="">
                
                 </div>
             </div>
          
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/disc1.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/disc1.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/shaft5.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/shaft5.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item third">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/shuttlerack3.jpg" alt="">
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/shuttlerack3.jpg" alt="">
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden ">
-                    <img class="img-fluid"  src="img/V2H/products/bush2.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden ">
+                    <img id="porf-img" class="img-fluid"  src="img/V2H/products/bush2.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/disc2.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/disc2.jpg" alt="">  
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 portfolio-item first">
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/discround.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item third">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/bush13.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/bush13.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item third">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/bush4.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/bush4.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/nut1.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/nut1.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/bush3.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/bush3.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/bush.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/bush.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item second">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/disc11.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/disc11.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/lrod1.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/lrod1.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item second">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/verticaldisc1.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/verticaldisc1.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item second">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/bush12.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/bush12.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item second">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/verticaldisc2.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="mx-auto porf-img" class="img-fluid" src="img/V2H/products/verticaldisc2.jpg" alt="">  
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 portfolio-item first">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="img/V2H/products/shaft3.jpg" alt="">  
+                <div class="mx-auto portfolio-img rounded overflow-hidden">
+                    <img id="porf-img" class="img-fluid" src="img/V2H/products/shaft3.jpg" alt="">  
                 </div>
             </div>
          
@@ -625,14 +671,15 @@
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-3 wow fadeIn " data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/V2H/products/V2HAbout2.jpg" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/V2H/V2H NameBoard.jpeg" style="object-fit: cover;" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 about-text py-1 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
                         <h2 class="text-primary">About Us</h2>
                         <h1 class="mb-4">5+ Years Experience In Precision Engineering Industry</h1>
-                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i>Our journey began when a group of highly skilled engineers came together with a vision to redefine precision engineering. Since then, we have grown and evolved, continuously expanding our capabilities and expertise.</p>
+                        <p><i class="fa fa-check-circle text-primary me-3"></i> Today, we are proud to be recognized as a leading name in the precision engineering industry.</p>
                         <p><i class="fa fa-check-circle text-primary me-3"></i>We are one of the most trusted Manufacturing and Engineering service providers, in Sriperumbudur, utilizing Precision Machinery & Equipment for manufacturing components that define us as the best in the industry.</p>
                         <p><i class="fa fa-check-circle text-primary me-3"></i>Instant access to facilities: labs, cleanrooms, workshops, equipment, instrumentation etc.</p>
                         <p><i class="fa fa-check-circle text-primary me-3"></i>Great work environment good guidance learning good working hours balance of work n social life</p>
@@ -652,34 +699,34 @@
                     <div class="p-lg-5 ps-lg-0">
                         <h3 class="text-primary">Contact Us</h3>
                         <p>We would love to hear from you and assist with your precision engineering needs. Whether you have questions, inquiries, or specific project requirements, our team is here to help.</p>
-                            <form onsubmit="">
+                            <form >
                             <div class="row g-3">
-                                <div class="col-md-6">
+                                <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text"  required   class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text"  required   class="form-control" id="name" placeholder="Your Name" value="">
                                         <label for="name" >Your Name</label>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="email"   required class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email"   required class="form-control" id="email" placeholder="Your Email" value="">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
+                               <!--  <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text"   required  class="form-control" id="phoneno" placeholder="phoneno">
+                                        <label for="phoneno">Phone No</label>
+                                    </div>
+                                </div> -->
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text"   required  class="form-control" id="subject" placeholder="Subject">
-                                        <label for="subject">Subject</label>
+                                        <textarea  required maxlength="250"  class="form-control" placeholder="Leave a message here" id="message" style="height: 100px" value=""></textarea>
+                                        <label for="message">Message</label><small> only 250 characters</small>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea  required   class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button  onclick="sendEmail()" class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
+                                    <button  onclick=sendMessage()   class="btn btn-primary rounded-pill py-3 px-5" >WhatsApp</button>
                                 </div>
                             </div>
                         </form>
